@@ -1,0 +1,7 @@
+[
+    {"model":"shop.Shop","pk":"1","fields":{ "filename":"1.jpg","goodsname":"革ジャン","price":35000,"comment":"ボディビルダーからベストボディまで、様々なトレーニーの体型に合わせてデザイン！レザーを身に纏い一味加えた筋肉を見せつけることができます。" }}, 
+    {"model":"shop.Shop","pk":"2","fields":{ "filename":"2.jpg","goodsname":"ダンベル","price":12000,"comment":"1kgから10kgまで1kg刻みで、10kgから30kgまでは2kg刻みで用意。ラックは別売り(￥15000)" }}, 
+    {"model":"shop.Shop","pk":"3","fields":{ "filename":"3.jpg","goodsname":"アブローラー","price":1500,"comment":"自宅で気軽に腹筋が鍛えられる。スペースも取らないので旅行先にも持参可能。見た目以上にきついため、かなり腹筋を喜ばせることができる。" }},
+    {"model":"shop.Shop","pk":"4","fields":{ "filename":"4.jpg","goodsname":"ベンチプレス","price":40000,"comment":"自宅で重量を扱いたい人におすすめ。プレートは100kgまで対応。2m×2.5mのスペースが必要。" }}
+]
+

@@ -1,0 +1,74 @@
+{% extends "common/l_sidebar.html" %}
+{% load static %}
+
+<!--カンマ区切りで必要になる load humanize -->
+{% load humanize %}
+
+
+
+
+{% block page_title %}ショップ{% endblock %}
+
+
+{% block extra_head %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'shop/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'shop/css/new_style.css' %}">
+
+
+<script src="{% static 'shop/js/jquery.inview.js' %}"></script>
+<script src="{% static 'shop/js/animation.js' %}"></script>
+
+{% endblock %}
+
+
+
+{% block main %}
+
+    <main id="mainarea" class="container">
+
+        <section id="aboutme">
+            
+            <div class="section_header_area">
+                <div class="section_header_shadow">Shop</div>
+                <div class="section_header">Shop</div>
+            </div>
+
+
+            <!--    TIPS:商品の画像と紹介テキストを互い違いにすることで、見る側にマンネリ感を与えないようにすることができる。
+                さらにアニメーションを使うことでユーザーのページ離脱を防ぐ
+            -->
+            {% for content in data %}
+            <div class="row about_staff_row">
+                <div class="col-sm-4 text-left" >
+                    <img class="col-sm-12" src="{% static 'shop/img/' %}{{ content.filename }}" alt="No images" >
+                </div>
+                <div class="col-sm-8 align-self-center">
+                    <div class="row my-2 text-left" style="font-size:0.9rem;">
+                        <div class="col-3 my-1">商品名</div><div class="col-9 my-1" >{{ content.goodsname }}</div>
+                        <!--intcommaでカンマ区切りに-->
+                        <div class="col-3 my-1">金額</div><div class="col-9 my-1" >￥{{ content.price|intcomma }}</div>
+                        <div class="col-3 my-1">商品説明</div><div class="col-9 my-1" >{{ content.comment }}</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+            <!--テンプレートの部品化はincludeでできる。テンプレート変数も読み込みできる。ただしload staticを忘れずに。-->
+            {# {% include "staff/include.html" %}  #}
+
+
+            
+        </section>
+
+    </main>
+
+
+
+
+
+
+
+{% endblock %}
+

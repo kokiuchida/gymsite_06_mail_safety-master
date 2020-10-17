@@ -1,0 +1,67 @@
+{% extends "common/l_sidebar.html" %}
+{% load static %}
+
+
+{% block page_title %}動画一覧{% endblock %}
+
+
+{% block extra_head %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'movie/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'movie/css/new_style.css' %}">
+
+
+<script src="{% static 'movie/js/jquery.inview.js' %}"></script>
+<script src="{% static 'movie/js/animation.js' %}"></script>
+
+{% endblock %}
+
+
+
+{% block main %}
+
+    <main id="mainarea" class="container">
+
+        <section id="aboutme">
+            
+            <div class="section_header_area">
+                <div class="section_header_shadow">動画サイト</div>
+                <div class="section_header">動画サイト</div>
+            </div>
+
+
+            <!--    TIPS:スタッフの画像と紹介テキストを互い違いにすることで、見る側にマンネリ感を与えないようにすることができる。
+                さらにアニメーションを使うことでユーザーのページ離脱を防ぐ
+            -->
+            {% for content in data %}
+            <div class="row about_staff_row">
+                <div class="col-sm-4 text-left" >
+                    <video class="col-sm-12" src="{% static 'movie/video/' %}{{ content.filename }}" controls></video>
+                </div>
+                <div class="col-sm-8 align-self-center">
+                    <div class="row my-2 text-left" style="font-size:0.9rem;">
+                        <div class="col-3 my-1">動画タイトル</div><div class="col-9 my-1" >{{ content.title }}</div>
+                        <div class="col-3 my-1">説明</div><div class="col-9 my-1" >{{ content.description }}</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+            <!--テンプレートの部品化はincludeでできる。テンプレート変数も読み込みできる。ただしload staticを忘れずに。-->
+            <!--{% include "staff/include.html" %}  -->
+
+
+            
+        </section>
+
+    </main>
+
+
+
+
+
+
+
+{% endblock %}
+

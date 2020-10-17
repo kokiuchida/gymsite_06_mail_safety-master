@@ -1,0 +1,17 @@
+/* main area */
+
+main {
+    width:calc(100% - 300px);
+    position:relative;
+    left:300px;
+    
+    z-index:0;
+}
+
+@media (max-width:768px){
+    main {
+        width:100%;
+        top:4rem;
+        left:0;
+    }
+}

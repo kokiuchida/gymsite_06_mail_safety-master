@@ -1,0 +1,18 @@
+{% load static %}
+
+{% for content in data %}
+<div class="row about_staff_row">
+    <div class="col-sm-4 text-left" >
+        <img class="col-sm-12" src="{% static 'staff/img/staffpic_edited/' %}{{ content.filename }}" alt="Adam Smith" >
+    </div>
+    <div class="col-sm-8 align-self-center">
+        <div class="row my-2 text-left" style="font-size:0.9rem;">
+            <div class="col-3 my-1">氏名</div><div class="col-9 my-1" >{{ content.staffname }}</div>
+            <div class="col-3 my-1">チャームポイント</div><div class="col-9 my-1" >{{ content.bestmuscle }}</div>
+            <div class="col-3 my-1">トレーニング歴</div><div class="col-9 my-1" >{{ content.workouthistory }}</div>
+            <div class="col-3 my-1">一言</div><div class="col-9 my-1" >{{ content.comment }}</div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
